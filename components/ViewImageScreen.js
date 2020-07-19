@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
   greenBox: {
     height: 50,
     width: 50,
-    // backgroundColor: colors.secondaryColor,
     justifyContent: "center",
     alignItems: "center",
   },
