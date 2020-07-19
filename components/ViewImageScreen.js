@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Image,
 } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "./config/colors";
 
@@ -14,8 +15,16 @@ const ViewImageScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.retangleContainer}>
-        <View style={styles.redBox}></View>
-        <View style={styles.greenBox}></View>
+        <View style={styles.redBox}>
+          <MaterialCommunityIcons color="#fff" name="close" size={32} />
+        </View>
+        <View style={styles.greenBox}>
+          <MaterialCommunityIcons
+            color="#fff"
+            name="trash-can-outline"
+            size={32}
+          />
+        </View>
       </View>
       <View style={{ flex: 1 }}>
         <Image
@@ -47,12 +56,15 @@ const styles = StyleSheet.create({
   redBox: {
     height: 50,
     width: 50,
-    backgroundColor: colors.primaryColor,
+    justifyContent: "center",
+    alignItems: "center",
   },
   greenBox: {
     height: 50,
     width: 50,
-    backgroundColor: colors.secondaryColor,
+    // backgroundColor: colors.secondaryColor,
+    justifyContent: "center",
+    alignItems: "center",
   },
   bgImage: {
     width: "100%",

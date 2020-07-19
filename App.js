@@ -12,19 +12,14 @@ import {
 import HomeScreen from "./components/HomeScreen";
 import ViewImageScreen from "./components/ViewImageScreen";
 import ButtonComponent from "./components/ButtonComponent";
-import moduleName from "./components/Card";
-
-import colors from "./components/config/colors";
 import Card from "./components/Card";
+import ListDetails from "./components/ListDetails";
+import colors from "./components/config/colors";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Card
-        image={require("./assets/jacket.jpg")}
-        title="Red jacket for sale!"
-        subtitle="$100"
-      />
+      <ViewImageScreen />
     </SafeAreaView>
   );
 }
