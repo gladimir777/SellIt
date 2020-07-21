@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   title: {
     padding: 10,
     paddingLeft: 20,
-    fontSize: 20,
+    fontSize: 25,
   },
   subtitle: {
     paddingHorizontal: 20,
@@ -77,5 +77,10 @@ const styles = StyleSheet.create({
   },
   name: {
     fontWeight: "bold",
+    fontSize: 20,
+    fontWeight: "500",
+  },
+  numberOfItem: {
+    fontSize: 15,
   },
 });

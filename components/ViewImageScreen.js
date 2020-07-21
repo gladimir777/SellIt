@@ -12,7 +12,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "./config/colors";
 
 const ViewImageScreen = () => {
-  //console.log(object)
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.retangleContainer}>

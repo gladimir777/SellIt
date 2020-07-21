@@ -19,7 +19,7 @@ import colors from "./components/config/colors";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <ViewImageScreen />
+      <ListDetails />
     </SafeAreaView>
   );
 }
