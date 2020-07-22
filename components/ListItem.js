@@ -10,10 +10,7 @@ import colors from "./config/colors";
 
 const ListItem = ({ image, title, subTitle, onPress }) => {
   return (
-    <TouchableHighlight
-      underlayColor={colors.light}
-      onPress={() => console.log("Pressed")}
-    >
+    <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
       <View style={styles.profileContainer}>
         <Image style={styles.profilePicture} source={image} />
         <View style={styles.profileTextContainer}>

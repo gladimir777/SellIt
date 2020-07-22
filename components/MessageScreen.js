@@ -42,6 +42,7 @@ const MessageScreen = () => {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => console.log("Pressed", item)}
           />
         )}
         keyExtractor={(message) => message.id.toString()}
