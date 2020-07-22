@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import ListItem from "./ListItem";
+import ListItemSeparator from "./ListItemSeparator";
 
 const messages = [
   {
@@ -44,6 +45,7 @@ const MessageScreen = () => {
           />
         )}
         keyExtractor={(message) => message.id.toString()}
+        ItemSeparatorComponent={ListItemSeparator}
       />
     </SafeAreaView>
   );
