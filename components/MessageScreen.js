@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -12,7 +12,7 @@ import ListItem from "./ListItem";
 import ListItemSeparator from "./ListItemSeparator";
 import ListItemDeleteAction from "./ListItemDeleteAction";
 
-const messages = [
+const initMessages = [
   {
     id: 1,
     title: " t1",
@@ -34,17 +34,24 @@ const messages = [
 ];
 
 const MessageScreen = () => {
+  const [message, setMessage] = useState(initMessages);
+  const handleDelete = (item) => {
+    setMessage(message.filter((obj) => obj.id !== item.id));
+  };
+
   return (
     <SafeAreaView style={{ top: StatusBar.currentHeight }}>
       <FlatList
-        data={messages}
+        data={message}
         renderItem={({ item }) => (
           <ListItem
             title={item.title}
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log("Pressed", item)}
-            renderRightActions={ListItemDeleteAction}
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
           />
         )}
         keyExtractor={(message) => message.id.toString()}
