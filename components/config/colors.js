@@ -4,4 +4,5 @@ export default {
   secondaryColor: "#4ECDC4",
   white: "#fff",
   light: "#f8f4f4",
+  danger: "#ff5252",
 };

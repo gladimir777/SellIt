@@ -10,6 +10,7 @@ import {
 
 import ListItem from "./ListItem";
 import ListItemSeparator from "./ListItemSeparator";
+import ListItemDeleteAction from "./ListItemDeleteAction";
 
 const messages = [
   {
@@ -43,6 +44,7 @@ const MessageScreen = () => {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log("Pressed", item)}
+            renderRightActions={ListItemDeleteAction}
           />
         )}
         keyExtractor={(message) => message.id.toString()}
