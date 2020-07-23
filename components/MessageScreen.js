@@ -38,7 +38,6 @@ const MessageScreen = () => {
   const handleDelete = (item) => {
     setMessage(message.filter((obj) => obj.id !== item.id));
   };
-
   return (
     <SafeAreaView style={{ top: StatusBar.currentHeight }}>
       <FlatList
