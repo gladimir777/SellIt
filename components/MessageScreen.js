@@ -35,6 +35,7 @@ const initMessages = [
 
 const MessageScreen = () => {
   const [message, setMessage] = useState(initMessages);
+  const [refreshing, setRefreshing] = useState(false);
   const handleDelete = (item) => {
     setMessage(message.filter((obj) => obj.id !== item.id));
   };
@@ -53,8 +54,19 @@ const MessageScreen = () => {
             )}
           />
         )}
+        refreshing={refreshing}
         keyExtractor={(message) => message.id.toString()}
         ItemSeparatorComponent={ListItemSeparator}
+        onRefresh={() =>
+          setMessage([
+            {
+              id: 3,
+              title: " t3",
+              description: "d3",
+              image: require("../assets/mosh.jpg"),
+            },
+          ])
+        }
       />
     </SafeAreaView>
   );
