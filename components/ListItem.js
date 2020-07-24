@@ -9,11 +9,18 @@ import {
 import colors from "./config/colors";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
-const ListItem = ({ image, title, subTitle, onPress, renderRightActions }) => {
+const ListItem = ({
+  image,
+  title,
+  subTitle,
+  onPress,
+  renderRightActions,
+  bgColor,
+}) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-        <View style={styles.profileContainer}>
+        <View style={[styles.profileContainer, { backgroundColor: bgColor }]}>
           <Image style={styles.profilePicture} source={image} />
           <View style={styles.profileTextContainer}>
             <Text style={styles.name}>{title}</Text>

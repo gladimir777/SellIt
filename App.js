@@ -15,12 +15,13 @@ import ButtonComponent from "./components/ButtonComponent";
 import Card from "./components/Card";
 import ListDetails from "./components/ListDetails";
 import MessageScreen from "./components/MessageScreen";
+import MyAccount from "./components/MyAccount";
 import colors from "./components/config/colors";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <MessageScreen />
+      <MyAccount />
     </SafeAreaView>
   );
 }
