@@ -6,4 +6,5 @@ export default {
   light: "#f8f4f4",
   medium: "#eeeeee",
   danger: "#ff5252",
+  yellow: "#ffe66d",
 };

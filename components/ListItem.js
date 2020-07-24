@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 20,
     marginTop: 10,
+    paddingVertical: 5,
   },
   profilePicture: {
     height: 70,

@@ -1,6 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
+
 import ListItem from "./ListItem";
+import IconItem from "./IconItem";
+import ListItemSeparator from "./ListItemSeparator";
 
 import colors from "./config/colors";
 
@@ -17,6 +20,22 @@ const MyAccount = () => {
           bgColor={colors.white}
         />
       </View>
+      <View style={styles.icoContainer}>
+        <IconItem
+          bgColor={colors.primaryColor}
+          name="format-list-bulleted"
+          title="My Listings"
+        />
+        <ListItemSeparator />
+        <IconItem
+          bgColor={colors.secondaryColor}
+          name="email"
+          title="My Messages"
+        />
+      </View>
+      <View style={styles.logout}>
+        <IconItem bgColor={colors.yellow} name="logout" title="Log Out" />
+      </View>
     </View>
   );
 };
@@ -30,5 +49,11 @@ const styles = StyleSheet.create({
   },
   account: {
     top: StatusBar.currentHeight,
+  },
+  icoContainer: {
+    marginTop: 150,
+  },
+  logout: {
+    marginTop: 20,
   },
 });
