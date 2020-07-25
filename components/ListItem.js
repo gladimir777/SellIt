@@ -15,16 +15,24 @@ const ListItem = ({
   subTitle,
   onPress,
   renderRightActions,
+  IconComponent,
   bgColor,
 }) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={[styles.profileContainer, { backgroundColor: bgColor }]}>
-          <Image style={styles.profilePicture} source={image} />
+          {IconComponent}
+          {image && (
+            <Image
+              style={[styles.profilePicture, { width: 70, height: 70 }]}
+              source={image}
+            />
+          )}
+
           <View style={styles.profileTextContainer}>
             <Text style={styles.name}>{title}</Text>
-            <Text style={styles.numberOfItem}>{subTitle}</Text>
+            {subTitle && <Text style={styles.numberOfItem}>{subTitle}</Text>}
           </View>
         </View>
       </TouchableHighlight>
@@ -36,25 +44,24 @@ export default ListItem;
 
 const styles = StyleSheet.create({
   profileContainer: {
-    display: "flex",
     flexDirection: "row",
-    paddingHorizontal: 20,
-    marginTop: 10,
-    paddingVertical: 5,
+    // paddingHorizontal: 20,
+    // marginTop: 10,
+    padding: 15,
   },
   profilePicture: {
-    height: 70,
-    width: 70,
     borderRadius: 35,
     resizeMode: "cover",
   },
   profileTextContainer: {
-    margin: 10,
+    marginHorizontal: 10,
+    justifyContent: "center",
   },
   name: {
     fontWeight: "bold",
     fontSize: 20,
     fontWeight: "500",
+    alignContent: "center",
   },
   numberOfItem: {
     fontSize: 15,

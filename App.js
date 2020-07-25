@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
   StyleSheet,
@@ -7,6 +6,7 @@ import {
   SafeAreaView,
   Button,
   Dimensions,
+  StatusBar,
 } from "react-native";
 
 import HomeScreen from "./components/HomeScreen";
@@ -14,8 +14,10 @@ import ViewImageScreen from "./components/ViewImageScreen";
 import ButtonComponent from "./components/ButtonComponent";
 import Card from "./components/Card";
 import ListDetails from "./components/ListDetails";
+import ListItem from "./components/ListItem";
 import MessageScreen from "./components/MessageScreen";
 import MyAccount from "./components/MyAccount";
+import Icon from "./components/Icon";
 import colors from "./components/config/colors";
 
 export default function App() {
@@ -31,5 +33,6 @@ const styles = StyleSheet.create({
     flex: 1,
     // alignItems: "center",
     //justifyContent: "center",
+    top: StatusBar.currentHeight,
   },
 });
