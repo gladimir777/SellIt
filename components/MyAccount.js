@@ -1,12 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 
 import ListItem from "./ListItem";
 import Icon from "./Icon";
 import ListItemSeparator from "./ListItemSeparator";
-
 import colors from "./config/colors";
 
+const menuItem = [
+  {
+    title: "My Listings",
+    icon: {
+      name: "format-list-bulleted",
+      bgColor: colors.primaryColor,
+    },
+  },
+  {
+    title: "My messages",
+    icon: {
+      name: "email",
+      bgColor: colors.secondaryColor,
+    },
+  },
+];
 const MyAccount = () => {
   const handlePressed = () => console.log("Item pressed");
   return (
@@ -20,8 +35,34 @@ const MyAccount = () => {
           bgColor={colors.white}
         />
       </View>
-      <View style={styles.icoContainer}></View>
-      <View style={styles.logout}></View>
+      <View>
+        <FlatList
+          data={menuItem}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              bgColor="#fff"
+              IconComponent={
+                <Icon
+                  bgColor={item.icon.bgColor}
+                  name={item.icon.name}
+                  size={40}
+                />
+              }
+            />
+          )}
+          keyExtractor={(item) => item.title}
+        />
+      </View>
+      <View style={styles.logout}>
+        <ListItem
+          title="Log out"
+          bgColor="#fff"
+          IconComponent={
+            <Icon bgColor={colors.yellow} name="logout" size={40} />
+          }
+        />
+      </View>
     </View>
   );
 };
@@ -34,10 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.medium,
   },
   account: {
-    top: StatusBar.currentHeight,
-  },
-  icoContainer: {
-    marginTop: 100,
+    marginVertical: 20,
   },
   logout: {
     marginTop: 20,

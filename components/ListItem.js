@@ -45,8 +45,6 @@ export default ListItem;
 const styles = StyleSheet.create({
   profileContainer: {
     flexDirection: "row",
-    // paddingHorizontal: 20,
-    // marginTop: 10,
     padding: 15,
   },
   profilePicture: {
