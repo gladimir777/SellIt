@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8f4f4",
   },
   listContainer: {
-    top: StatusBar.currentHeight + 15,
+    paddingTop: StatusBar.currentHeight + 1,
   },
 });

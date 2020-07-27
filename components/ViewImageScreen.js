@@ -1,19 +1,13 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  StatusBar,
-  SafeAreaView,
-  Image,
-} from "react-native";
+import { StyleSheet, View, StatusBar, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Screen from "./Screen";
 
 import colors from "./config/colors";
 
 const ViewImageScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <Screen style={styles.container}>
       <View style={styles.retangleContainer}>
         <View style={styles.redBox}>
           <MaterialCommunityIcons color="#fff" name="close" size={32} />
@@ -33,7 +27,7 @@ const ViewImageScreen = () => {
           style={styles.bgImage}
         ></Image>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 };
 

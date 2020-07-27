@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  StatusBar,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, FlatList, StatusBar } from "react-native";
 
 import ListItem from "./ListItem";
 import ListItemSeparator from "./ListItemSeparator";
 import ListItemDeleteAction from "./ListItemDeleteAction";
+import Screen from "./Screen";
 
 const initMessages = [
   {
@@ -40,7 +34,7 @@ const MessageScreen = () => {
     setMessage(message.filter((obj) => obj.id !== item.id));
   };
   return (
-    <SafeAreaView style={{ top: StatusBar.currentHeight }}>
+    <Screen style={{ top: StatusBar.currentHeight }}>
       <FlatList
         data={message}
         renderItem={({ item }) => (
@@ -68,7 +62,7 @@ const MessageScreen = () => {
           ])
         }
       />
-    </SafeAreaView>
+    </Screen>
   );
 };
 
