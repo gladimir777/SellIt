@@ -5,14 +5,10 @@ import colors from "./config/colors";
 
 const Card = ({ title, subtitle, image }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={styles.card}>
-          <Image resizeMode="cover" source={image} style={styles.image} />
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>{subtitle}</Text>
-        </View>
-      </View>
+    <View style={styles.card}>
+      <Image resizeMode="cover" source={image} style={styles.image} />
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </View>
   );
 };
@@ -20,24 +16,20 @@ const Card = ({ title, subtitle, image }) => {
 export default Card;
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
   cardContainer: {
-    backgroundColor: "#f8f4f4",
-    height: 350,
-    paddingHorizontal: 20,
+    flex: 1,
+    top: StatusBar.currentHeight + 15,
   },
   card: {
-    width: "100%",
-    top: StatusBar.currentHeight + 50,
+    flex: 1,
     backgroundColor: colors.white,
     borderRadius: 10,
+    overflow: "hidden",
+    margin: 15,
   },
   image: {
     height: 200,
     width: "100%",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    paddingBottom: 20,
   },
   title: {
     padding: 10,
