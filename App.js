@@ -1,11 +1,24 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TextInput } from "react-native";
 
 import ListScreen from "./components/ListScreen";
 import Screen from "./components/Screen";
 
 export default function App() {
-  return <ListScreen />;
+  const [firstName, setFirstname] = useState("");
+  return (
+    <Screen>
+      <TextInput
+        placeholder="First Name"
+        onChangeText={(text) => setFirstname(text)}
+        style={{
+          borderBottomColor: "#ccc",
+          borderBottomWidth: 1,
+          padding: 5,
+        }}
+      />
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
